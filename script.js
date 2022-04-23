@@ -1,3 +1,17 @@
+function solicitarNombre() {
+    let nombre = prompt("Ingresá tu nombre:")
+    let apellido = prompt("Ingresá tu apellido:")
+    return nombreApellido = (nombre + " " + apellido)
+}
+
+solicitarNombre()
+
+function saludar() {
+    alert("Bienvenidx, " + nombreApellido)
+}
+
+saludar()
+
 var i = parseInt(prompt("Vamos a averigüar en qué año naciste. Ingresá tu edad:"))
 
 while(isNaN(i))
@@ -21,4 +35,4 @@ if (yaCumplio === "no") {
 
 let anioNac = (anioAct - edad)
     
-alert("Naciste en el año " + anioNac)
+alert("Estimadx " + nombreApellido + ": " + "Naciste en el año " + anioNac)
