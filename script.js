@@ -1,38 +1,23 @@
-function solicitarNombre() {
-    let nombre = prompt("Ingresá tu nombre:")
-    let apellido = prompt("Ingresá tu apellido:")
-    return nombreApellido = (nombre + " " + apellido)
-}
+let lolTeam = ["top", "mid", "jg", "adc", "supp"]
 
-solicitarNombre()
+lolTeam.splice(0, 1)
+lolTeam.unshift(prompt("¿Qué campeón seleccionás para top?"))
 
-function saludar() {
-    alert("Bienvenidx, " + nombreApellido)
-}
+lolTeam.splice(1, 1)
+lolTeam.unshift(prompt("¿Qué campeón seleccionás para mid?"))
 
-saludar()
+lolTeam.splice(2, 1)
+lolTeam.unshift(prompt("¿Qué campeón seleccionás para jg?"))
 
-var i = parseInt(prompt("Vamos a averigüar en qué año naciste. Ingresá tu edad:"))
+lolTeam.splice(3, 1)
+lolTeam.unshift(prompt("¿Qué campeón seleccionás para adc?"))
 
-while(isNaN(i))
-    var i = parseInt(prompt("¡Ingresá un número válido!"))
+lolTeam.splice(4, 1)
+lolTeam.unshift(prompt("¿Qué campeón seleccionás para supp?"))
 
-var anioAct = parseInt(prompt("¿En qué año estamos?"))
-
-while(isNaN(anioAct))
-    var anioAct = parseInt(prompt("¡Ingresá un número válido!"))
-
-var yaCumplio = prompt("¿Ya cumpliste años este año?").toLowerCase()
-
-while (yaCumplio != "si" && yaCumplio != "no")
-var yaCumplio = prompt("¿Ya cumpliste años este año? CONTESTÁ 'SI' O 'NO'").toLowerCase()
-
-if (yaCumplio === "no") {
-    var edad = i + 1
-} else if (yaCumplio === "si") {
-    var edad = i
-}
-
-let anioNac = (anioAct - edad)
-    
-alert("Estimadx " + nombreApellido + ": " + "Naciste en el año " + anioNac)
+alert("Tu equipo se compone de:")
+alert(lolTeam[lolTeam.length - 1] + " como TOP")
+alert(lolTeam[lolTeam.length - 2] + " como MID")
+alert(lolTeam[lolTeam.length - 3] + " como JG")
+alert(lolTeam[lolTeam.length - 4] + " como ADC")
+alert(lolTeam[lolTeam.length - 5] + " como SUPP")
