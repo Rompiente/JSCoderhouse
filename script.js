@@ -43,9 +43,13 @@ lolTeam.unshift(suppName.nombre)
 los campeones que vaya eligiendo (cantidad de CC, daño físico y mágico, frontlane, combos, etc) 
 ir recomendándole los campeones más óptimos para completar el equipo */
 
-alert("Tu equipo se compone de:")
-alert(lolTeam[lolTeam.length - 1] + " como TOP")
-alert(lolTeam[lolTeam.length - 2] + " como MID")
-alert(lolTeam[lolTeam.length - 3] + " como JG")
-alert(lolTeam[lolTeam.length - 4] + " como ADC")
-alert(lolTeam[lolTeam.length - 5] + " como SUPP")
+let topChampion = document.getElementById("top")
+topChampion.innerText = lolTeam[lolTeam.length - 1] + " como TOP"
+let midChampion = document.getElementById("mid")
+midChampion.innerText = lolTeam[lolTeam.length - 2] + " como MID"
+let jgChampion = document.getElementById("jg")
+jgChampion.innerText = lolTeam[lolTeam.length - 3] + " como JG"
+let adcChampion = document.getElementById("adc")
+adcChampion.innerText = lolTeam[lolTeam.length - 4] + " como ADC"
+let suppChampion = document.getElementById("supp")
+suppChampion.innerText = lolTeam[lolTeam.length - 5] + " como SUPP"
