@@ -1,3 +1,13 @@
+body {
+    background-color: antiquewhite;
+    color: black;
+}
+
+.darkMode {
+    background-color: black;
+    color: antiquewhite;
+}
+
 .top {
     text-align: center;
     background-color:lightgreen;

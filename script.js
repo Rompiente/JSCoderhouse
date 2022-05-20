@@ -1,3 +1,29 @@
+let darkMode
+
+if(localStorage.getItem('darkMode')) {
+    darkMode = localStorage.getItem('darkMode')
+} else {
+    localStorage.setItem('darkMode','light')
+}
+
+let botonDarkMode = document.querySelector('#botonDarkMode')
+let botonLightMode = document.querySelector('#botonLightMode')
+
+if(darkMode == 'dark') {
+    document.body.classList.add('darkMode')
+} else {
+    document.body.classList.remove('darkMode')
+}
+botonDarkMode.addEventListener('click', ()=> {
+    document.body.classList.add('darkMode')
+    localStorage.setItem('darkMode', 'dark')
+})
+botonLightMode.addEventListener('click', ()=> {
+    document.body.classList.remove('darkMode')
+    localStorage.setItem('darkMode', 'light')
+})
+
+
 let lolTeam = ["top", "mid", "jg", "adc", "supp"]
 
 const campeones = [
