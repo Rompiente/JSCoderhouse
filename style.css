@@ -3,32 +3,16 @@ body {
     color: black;
 }
 
+ul {
+    list-style-type: none;
+}
+
+.card-header, .card-body {
+    border-style: solid;
+    border-color: white;
+}
+
 .darkMode {
     background-color: black;
     color: antiquewhite;
-}
-
-.top {
-    text-align: center;
-    background-color:lightgreen;
-}
-
-.mid {
-    text-align: center;
-    background-color:purple ;
-}
-
-.jg {
-    text-align: center;
-    background-color:green ;
-}
-
-.adc {
-    text-align: center;
-    background-color:red ;
-}
-
-.supp {
-    text-align: center;
-    background-color:aqua ;    
-}
+    }
