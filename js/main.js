@@ -29,7 +29,7 @@ function mostrarTopDropdown(array){
     array.forEach(element => {
         topDropdown.innerHTML+=`
         <ul>
-        <li>${element.nombre}</li>
+        <li>${element.name}</li>
         <button onclick="agregarATop(${element.id})"> Seleccionar</button>
         </ul>`
     })
@@ -54,9 +54,9 @@ function mostrarTop(array){
         topCard.innerHTML+=`        
         <div class="card-header text-center">Campeón de Top</div>
         <div class="card-body text-center">
-        <h5 class="card-title">${element.nombre}</h5>
+        <h5 class="card-title">${element.name}</h5>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">Rol: ${element.rol}</li>
+        <li class="list-group-item">Rol: ${element.title}</li>
         <li class="list-group-item">Trait1: ${element.trait1}</li>
         <li class="list-group-item">Trait2: ${element.trait2}</li>
         <li class="list-group-item">Trait3: ${element.trait3}</li>
@@ -98,7 +98,7 @@ function mostrarMidDropdown(array){
     array.forEach(element => {
         midDropdown.innerHTML+=`
         <ul>
-        <li>${element.nombre}</li>
+        <li>${element.name}</li>
         <button onclick="agregarAMid(${element.id})"> Seleccionar</button>
         </ul>`
     })
@@ -123,9 +123,9 @@ function mostrarMid(array){
         midCard.innerHTML+=`        
         <div class="card-header text-center">Campeón de Mid</div>
         <div class="card-body text-center">
-        <h5 class="card-title">${element.nombre}</h5>
+        <h5 class="card-title">${element.name}</h5>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">Rol: ${element.rol}</li>
+        <li class="list-group-item">Rol: ${element.title}</li>
         <li class="list-group-item">Trait1: ${element.trait1}</li>
         <li class="list-group-item">Trait2: ${element.trait2}</li>
         <li class="list-group-item">Trait3: ${element.trait3}</li>
@@ -167,7 +167,7 @@ function mostrarJgDropdown(array){
     array.forEach(element => {
         jgDropdown.innerHTML+=`
         <ul>
-        <li>${element.nombre}</li>
+        <li>${element.name}</li>
         <button onclick="agregarAJg(${element.id})"> Seleccionar</button>
         </ul>`
     })
@@ -192,9 +192,9 @@ function mostrarJg(array){
         jgCard.innerHTML+=`        
         <div class="card-header text-center">Campeón de Jg</div>
         <div class="card-body text-center">
-        <h5 class="card-title">${element.nombre}</h5>
+        <h5 class="card-title">${element.name}</h5>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">Rol: ${element.rol}</li>
+        <li class="list-group-item">Rol: ${element.title}</li>
         <li class="list-group-item">Trait1: ${element.trait1}</li>
         <li class="list-group-item">Trait2: ${element.trait2}</li>
         <li class="list-group-item">Trait3: ${element.trait3}</li>
@@ -236,7 +236,7 @@ function mostrarAdcDropdown(array){
     array.forEach(element => {
         adcDropdown.innerHTML+=`
         <ul>
-        <li>${element.nombre}</li>
+        <li>${element.name}</li>
         <button onclick="agregarAAdc(${element.id})"> Seleccionar</button>
         </ul>`
     })
@@ -261,9 +261,9 @@ function mostrarAdc(array){
         adcCard.innerHTML+=`        
         <div class="card-header text-center">Campeón de Adc</div>
         <div class="card-body text-center">
-        <h5 class="card-title">${element.nombre}</h5>
+        <h5 class="card-title">${element.name}</h5>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">Rol: ${element.rol}</li>
+        <li class="list-group-item">Rol: ${element.title}</li>
         <li class="list-group-item">Trait1: ${element.trait1}</li>
         <li class="list-group-item">Trait2: ${element.trait2}</li>
         <li class="list-group-item">Trait3: ${element.trait3}</li>
@@ -306,7 +306,7 @@ function mostrarSuppDropdown(array){
     array.forEach(element => {
         suppDropdown.innerHTML+=`
         <ul>
-        <li>${element.nombre}</li>
+        <li>${element.name}</li>
         <button onclick="agregarASupp(${element.id})"> Seleccionar</button>
         </ul>`
     })
@@ -331,9 +331,9 @@ function mostrarSupp(array){
         suppCard.innerHTML+=`        
         <div class="card-header text-center">Campeón de Supp</div>
         <div class="card-body text-center">
-        <h5 class="card-title">${element.nombre}</h5>
+        <h5 class="card-title">${element.name}</h5>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">Rol: ${element.rol}</li>
+        <li class="list-group-item">Rol: ${element.title}</li>
         <li class="list-group-item">Trait1: ${element.trait1}</li>
         <li class="list-group-item">Trait2: ${element.trait2}</li>
         <li class="list-group-item">Trait3: ${element.trait3}</li>
@@ -368,3 +368,5 @@ suppDropdown.addEventListener('click', ()=>
 mostrarSupp(suppChampion))
 suppDropdown.addEventListener('click', ()=>
 suppChampion(suppChampion=[]))
+
+
