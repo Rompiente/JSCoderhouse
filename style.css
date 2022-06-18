@@ -7,12 +7,34 @@ ul {
     list-style-type: none;
 }
 
-.card-header, .card-body {
-    border-style: solid;
-    border-color: white;
-}
-
 .darkMode {
     background-color: black;
     color: antiquewhite;
     }
+
+.dropdown-menu {
+    overflow-y: auto;
+}
+
+.champName {
+    font-family: Papyrus, sans-serif, serif;
+    text-shadow: 1px 1px 1px black;
+}
+
+.card-header, .card-body {
+    border-style: solid;
+    border-color: white;
+    text-shadow: 1px 1px whitesmoke;
+}
+
+.AD {
+    text-shadow: 1px 1px red;
+}
+
+.AP {
+    text-shadow: 1px 1px blue;
+}
+
+.DEF {
+    text-shadow: 1px 1px green;
+}

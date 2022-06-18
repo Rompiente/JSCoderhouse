@@ -13,8 +13,8 @@
 </head>
 
 <body>
-    <button id="botonLightMode" class="btn btn-light">Light mode</button>
-    <button id="botonDarkMode" class="btn btn-dark">Dark mode</button>
+    <button id="botonLightMode" class="btn btn-light">Modo Claro</button>
+    <button id="botonDarkMode" class="btn btn-dark">Modo Oscuro</button>
     <h1 class="d-flex flex-row justify-content-evenly">League of Legends Team Builder</h1>
     <div class="d-flex flex-row justify-content-evenly">
         <div class="dropdown">
@@ -22,7 +22,7 @@
                 data-bs-toggle="dropdown" aria-expanded="false">
                 Campeón de TOP
             </button>
-            <ul class="dropdown-menu topList" aria-labelledby="dropdownMenuButton1" id="topDropdown">
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="topDropdown" style="max-height: 25rem;">
             </ul>
         </div>
         <div class="dropdown">
@@ -30,7 +30,7 @@
                 data-bs-toggle="dropdown" aria-expanded="false">
                 Campeón de MID
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="midDropdown">
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="midDropdown"  style="max-height: 25rem;">
 
             </ul>
         </div>
@@ -39,7 +39,7 @@
                 data-bs-toggle="dropdown" aria-expanded="false">
                 Campeón de JG
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="jgDropdown">
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="jgDropdown"  style="max-height: 25rem;">
             </ul>
         </div>
         <div class="dropdown">
@@ -47,7 +47,7 @@
                 data-bs-toggle="dropdown" aria-expanded="false">
                 Campeón de ADC
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="adcDropdown">
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="adcDropdown"  style="max-height: 25rem;">
 
             </ul>
         </div>
@@ -56,7 +56,7 @@
                 data-bs-toggle="dropdown" aria-expanded="false">
                 Campeón de SUPP
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="suppDropdown">
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="suppDropdown"  style="max-height: 25rem;">
 
             </ul>
         </div>
@@ -64,19 +64,11 @@
     <h3 class="d-flex flex-row justify-content-evenly">Tu equipo se compone de:</h3>
     <div class="container">
         <div class="row">
-            <div class="col-1" style="max-width: 18rem;"></div>
-            <div id="topCard" class="col-6 card text-dark bg-danger mb-3" style="max-width: 18rem;"></div>
-            <div id="midCard" class="col-6 card text-dark bg-primary mb-3" style="max-width: 18rem;"></div>
-            <div class="col-1" style="max-width: 18rem;"></div>
-            <div id="adcCard" class="col-6 card text-dark bg-warning mb-3" style="max-width: 18rem;"></div>
-            <div class="col-1" style="max-width: 18rem;"></div>
-        </div>
-        <div class="row">
-            <div class="col-1.5" style="max-width: 18rem;"></div>
-            <div id="jgCard" class="col-6 card text-dark bg-success mb-3" style="max-width: 18rem;"></div>
-            <div class="col-2" style="max-width: 18rem;"></div>
-            <div id="suppCard" class="col-6 card text-dark bg-info mb-3" style="max-width: 18rem;"></div>
-            <div class="col-1" style="max-width: 18rem;"></div>
+            <div id="topCard" class="col-6 card text-dark bg-danger mb-3" style="max-width: 16rem;"></div>
+            <div id="midCard" class="col-6 card text-dark bg-primary mb-3" style="max-width: 16rem;"></div>
+            <div id="jgCard" class="col-6 card text-dark bg-success mb-3" style="max-width: 16rem;"></div>
+            <div id="adcCard" class="col-6 card text-dark bg-warning mb-3" style="max-width: 16rem;"></div>
+            <div id="suppCard" class="col-6 card text-dark bg-info mb-3" style="max-width: 16rem;"></div>
         </div>
     </div>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

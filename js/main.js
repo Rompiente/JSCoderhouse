@@ -1,66 +1,64 @@
 console.log("main.js")
-
+/////Botones Modo Claro - Oscuro
 let darkMode
 
-(localStorage.getItem('darkMode')) ? darkMode = localStorage.getItem('darkMode') : localStorage.setItem('darkMode','dark')
+(localStorage.getItem('darkMode')) ? darkMode = localStorage.getItem('darkMode'): localStorage.setItem('darkMode', 'dark')
 
 let botonDarkMode = document.querySelector('#botonDarkMode')
 let botonLightMode = document.querySelector('#botonLightMode')
 
-if(darkMode == 'dark') {
+if (darkMode == 'dark') {
     document.body.classList.add('darkMode')
 } else {
     document.body.classList.remove('darkMode')
 }
-botonDarkMode.addEventListener('click', ()=> {
+botonDarkMode.addEventListener('click', () => {
     document.body.classList.add('darkMode')
     localStorage.setItem('darkMode', 'dark')
 })
-botonLightMode.addEventListener('click', ()=> {
+botonLightMode.addEventListener('click', () => {
     document.body.classList.remove('darkMode')
     localStorage.setItem('darkMode', 'light')
 })
 
-                                                                                                      //TOP
+/////TOP/////
 
-const topDropdown=document.getElementById("topDropdown")
-function mostrarTopDropdown(array){
-    topDropdown.innerHTML=""
+const topDropdown = document.getElementById("topDropdown")
+
+function mostrarTopDropdown(array) {
+    topDropdown.innerHTML = ""
     array.forEach(element => {
-        topDropdown.innerHTML+=`
+        topDropdown.innerHTML += `
         <ul>
-        <li>${element.name}</li>
-        <button onclick="agregarATop(${element.id})"> Seleccionar</button>
+        <li class="champName">${element.name}</li>
+        <button onclick='agregarATop("${element.id}")'> Seleccionar</button>
         </ul>`
     })
 }
 
-mostrarTopDropdown(campeones)
+let topChampion = []
 
-let topChampion=[]
-
-function agregarATop(idParam){
-    const championSelected= campeones.find(e=>e.id==idParam)
+function agregarATop(idParam) {
+    const championSelected = campeones.find(e => e.id === idParam)
     topChampion.push(championSelected)
 }
 
 console.log(topChampion)
 
-const topCard=document.getElementById("topCard")
+const topCard = document.getElementById("topCard")
 
-function mostrarTop(array){
-    topCard.innerHTML=""
+function mostrarTop(array) {
+    topCard.innerHTML = ""
     array.forEach(element => {
-        topCard.innerHTML+=`        
-        <div class="card-header text-center">Campeón de Top</div>
+        topCard.innerHTML += `        
+        <h5 class="card-header text-center">${element.name}</h5>
+        <img src="IMG/${element.image.full}" class="card-img-top" alt="Campeón de Top"> 
         <div class="card-body text-center">
-        <h5 class="card-title">${element.name}</h5>
+        <h5 class="card-title">${element.title}</h5>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">Rol: ${element.title}</li>
-        <li class="list-group-item">Trait1: ${element.trait1}</li>
-        <li class="list-group-item">Trait2: ${element.trait2}</li>
-        <li class="list-group-item">Trait3: ${element.trait3}</li>
-        <li class="list-group-item">Trait4: ${element.trait4}</li>
+        <li class="list-group-item AD">Daño Físico: ${element.info.attack}</li>
+        <li class="list-group-item AP">Daño Mágico: ${element.info.magic}</li>
+        <li class="list-group-item DEF">Resistencias: ${element.info.defense}</li>
         </ul>
         </div>
         </div>
@@ -68,68 +66,66 @@ function mostrarTop(array){
     });
 }
 
-topDropdown.addEventListener('click', ()=>
-Toastify({
-    text: `Campeón seleccionado para top. Click para cancelar`,
-    duration: 10000,
-    close: true,
-    gravity: "bottom",
-    position: "right",
-    stopOnFocus: false,
-    style: {
-      background: "#dc3545",
-    },
-    onClick: function(){
-        topCard.innerHTML=""
-        topChampion(topChampion=[])
-    }
-  }).showToast(),)
+topDropdown.addEventListener('click', () =>
+    Toastify({
+        text: `Campeón seleccionado para top. Click para cancelar`,
+        duration: 10000,
+        close: true,
+        gravity: "bottom",
+        position: "right",
+        stopOnFocus: false,
+        style: {
+            background: "#dc3545",
+        },
+        onClick: function () {
+            topCard.innerHTML = ""
+            topChampion(topChampion = [])
+        }
+    }).showToast(), )
 
-topDropdown.addEventListener('click', ()=>
-mostrarTop(topChampion))
-topDropdown.addEventListener('click', ()=>
-topChampion(topChampion=[]))
+topDropdown.addEventListener('click', () =>
+    mostrarTop(topChampion))
+topDropdown.addEventListener('click', () =>
+    (topChampion = []))
 
-                                                                                                       //MID
+/////MID/////
 
-const midDropdown=document.getElementById("midDropdown")
-function mostrarMidDropdown(array){
-    midDropdown.innerHTML=""
+const midDropdown = document.getElementById("midDropdown")
+
+function mostrarMidDropdown(array) {
+    midDropdown.innerHTML = ""
     array.forEach(element => {
-        midDropdown.innerHTML+=`
+        midDropdown.innerHTML += `
         <ul>
-        <li>${element.name}</li>
-        <button onclick="agregarAMid(${element.id})"> Seleccionar</button>
+        <li class="champName">${element.name}</li>
+        <button onclick='agregarAMid("${element.id}")'> Seleccionar</button>
         </ul>`
     })
 }
 
-mostrarMidDropdown(campeones)
+let midChampion = []
 
-let midChampion=[]
-
-function agregarAMid(idParam){
-    const championSelected= campeones.find(e=>e.id==idParam)
+function agregarAMid(idParam) {
+    const championSelected = campeones.find(e => e.id === idParam)
     midChampion.push(championSelected)
 }
 
 console.log(midChampion)
 
-const midCard=document.getElementById("midCard")
+const midCard = document.getElementById("midCard")
 
-function mostrarMid(array){
-    midCard.innerHTML=""
+function mostrarMid(array) {
+    midCard.innerHTML = ""
     array.forEach(element => {
-        midCard.innerHTML+=`        
-        <div class="card-header text-center">Campeón de Mid</div>
+        midCard.innerHTML += `        
+        <h5 class="card-header text-center">${element.name}</h5>
+        <img src="IMG/${element.image.full}" class="card-img-mid" alt="Campeón de Mid"> 
         <div class="card-body text-center">
-        <h5 class="card-title">${element.name}</h5>
+        <h5 class="card-title">${element.title}</h5>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">Rol: ${element.title}</li>
-        <li class="list-group-item">Trait1: ${element.trait1}</li>
-        <li class="list-group-item">Trait2: ${element.trait2}</li>
-        <li class="list-group-item">Trait3: ${element.trait3}</li>
-        <li class="list-group-item">Trait4: ${element.trait4}</li>
+        <li class="list-group-item AD">Daño Físico: ${element.info.attack}</li>
+        <li class="list-group-item AP">Daño Mágico: ${element.info.magic}</li>
+        <li class="list-group-item DEF">Resistencias: ${element.info.defense}</li>
         </ul>
         </div>
         </div>
@@ -137,68 +133,66 @@ function mostrarMid(array){
     });
 }
 
-midDropdown.addEventListener('click', ()=>
-Toastify({
-    text: `Campeón seleccionado para mid. Click para cancelar`,
-    duration: 10000,
-    close: true,
-    gravity: "bottom",
-    position: "right",
-    stopOnFocus: false,
-    style: {
-      background: "#0d6efd",
-    },
-    onClick: function(){
-        midCard.innerHTML=""
-        midChampion(midChampion=[])
-    }
-  }).showToast(),)
+midDropdown.addEventListener('click', () =>
+    Toastify({
+        text: `Campeón seleccionado para mid. Click para cancelar`,
+        duration: 10000,
+        close: true,
+        gravity: "bottom",
+        position: "right",
+        stopOnFocus: false,
+        style: {
+            background: "#0d6efd",
+        },
+        onClick: function () {
+            midCard.innerHTML = ""
+            midChampion(midChampion = [])
+        }
+    }).showToast(), )
 
-midDropdown.addEventListener('click', ()=>
-mostrarMid(midChampion))
-midDropdown.addEventListener('click', ()=>
-midChampion(midChampion=[]))
+midDropdown.addEventListener('click', () =>
+    mostrarMid(midChampion))
+midDropdown.addEventListener('click', () =>
+    (midChampion = []))
 
-                                                                                                    //JG
+/////JG/////
 
-const jgDropdown=document.getElementById("jgDropdown")
-function mostrarJgDropdown(array){
-    jgDropdown.innerHTML=""
+const jgDropdown = document.getElementById("jgDropdown")
+
+function mostrarJgDropdown(array) {
+    jgDropdown.innerHTML = ""
     array.forEach(element => {
-        jgDropdown.innerHTML+=`
+        jgDropdown.innerHTML += `
         <ul>
-        <li>${element.name}</li>
-        <button onclick="agregarAJg(${element.id})"> Seleccionar</button>
+        <li class="champName">${element.name}</li>
+        <button onclick='agregarAJg("${element.id}")'> Seleccionar</button>
         </ul>`
     })
 }
 
-mostrarJgDropdown(campeones)
+let jgChampion = []
 
-let jgChampion=[]
-
-function agregarAJg(idParam){
-    const championSelected= campeones.find(e=>e.id==idParam)
+function agregarAJg(idParam) {
+    const championSelected = campeones.find(e => e.id === idParam)
     jgChampion.push(championSelected)
 }
 
 console.log(jgChampion)
 
-const jgCard=document.getElementById("jgCard")
+const jgCard = document.getElementById("jgCard")
 
-function mostrarJg(array){
-    jgCard.innerHTML=""
+function mostrarJg(array) {
+    jgCard.innerHTML = ""
     array.forEach(element => {
-        jgCard.innerHTML+=`        
-        <div class="card-header text-center">Campeón de Jg</div>
+        jgCard.innerHTML += `        
+        <h5 class="card-header text-center">${element.name}</h5>
+        <img src="IMG/${element.image.full}" class="card-img-jg" alt="Campeón de Jg"> 
         <div class="card-body text-center">
-        <h5 class="card-title">${element.name}</h5>
+        <h5 class="card-title">${element.title}</h5>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">Rol: ${element.title}</li>
-        <li class="list-group-item">Trait1: ${element.trait1}</li>
-        <li class="list-group-item">Trait2: ${element.trait2}</li>
-        <li class="list-group-item">Trait3: ${element.trait3}</li>
-        <li class="list-group-item">Trait4: ${element.trait4}</li>
+        <li class="list-group-item AD">Daño Físico: ${element.info.attack}</li>
+        <li class="list-group-item AP">Daño Mágico: ${element.info.magic}</li>
+        <li class="list-group-item DEF">Resistencias: ${element.info.defense}</li>
         </ul>
         </div>
         </div>
@@ -206,68 +200,66 @@ function mostrarJg(array){
     });
 }
 
-jgDropdown.addEventListener('click', ()=>
-Toastify({
-    text: `Campeón seleccionado para jg. Click para cancelar`,
-    duration: 10000,
-    close: true,
-    gravity: "bottom",
-    position: "right",
-    stopOnFocus: false,
-    style: {
-      background: "#198754",
-    },
-    onClick: function(){
-        jgCard.innerHTML=""
-        jgChampion(jgChampion=[])
-    }
-  }).showToast(),)
+jgDropdown.addEventListener('click', () =>
+    Toastify({
+        text: `Campeón seleccionado para jg. Click para cancelar`,
+        duration: 10000,
+        close: true,
+        gravity: "bottom",
+        position: "right",
+        stopOnFocus: false,
+        style: {
+            background: "#198754",
+        },
+        onClick: function () {
+            jgCard.innerHTML = ""
+            jgChampion(jgChampion = [])
+        }
+    }).showToast(), )
 
-jgDropdown.addEventListener('click', ()=>
-mostrarJg(jgChampion))
-jgDropdown.addEventListener('click', ()=>
-jgChampion(jgChampion=[]))
+jgDropdown.addEventListener('click', () =>
+    mostrarJg(jgChampion))
+jgDropdown.addEventListener('click', () =>
+    (jgChampion = []))
 
-                                                                                                    //ADC
+/////ADC/////
 
-const adcDropdown=document.getElementById("adcDropdown")
-function mostrarAdcDropdown(array){
-    adcDropdown.innerHTML=""
+const adcDropdown = document.getElementById("adcDropdown")
+
+function mostrarAdcDropdown(array) {
+    adcDropdown.innerHTML = ""
     array.forEach(element => {
-        adcDropdown.innerHTML+=`
+        adcDropdown.innerHTML += `
         <ul>
-        <li>${element.name}</li>
-        <button onclick="agregarAAdc(${element.id})"> Seleccionar</button>
+        <li class="champName">${element.name}</li>
+        <button onclick='agregarAAdc("${element.id}")'> Seleccionar</button>
         </ul>`
     })
 }
 
-mostrarAdcDropdown(campeones)
+let adcChampion = []
 
-let adcChampion=[]
-
-function agregarAAdc(idParam){
-    const championSelected= campeones.find(e=>e.id==idParam)
+function agregarAAdc(idParam) {
+    const championSelected = campeones.find(e => e.id === idParam)
     adcChampion.push(championSelected)
 }
 
 console.log(adcChampion)
 
-const adcCard=document.getElementById("adcCard")
+const adcCard = document.getElementById("adcCard")
 
-function mostrarAdc(array){
-    adcCard.innerHTML=""
+function mostrarAdc(array) {
+    adcCard.innerHTML = ""
     array.forEach(element => {
-        adcCard.innerHTML+=`        
-        <div class="card-header text-center">Campeón de Adc</div>
+        adcCard.innerHTML += `        
+        <h5 class="card-header text-center">${element.name}</h5>
+        <img src="IMG/${element.image.full}" class="card-img-adc" alt="Campeón de Adc"> 
         <div class="card-body text-center">
-        <h5 class="card-title">${element.name}</h5>
+        <h5 class="card-title">${element.title}</h5>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">Rol: ${element.title}</li>
-        <li class="list-group-item">Trait1: ${element.trait1}</li>
-        <li class="list-group-item">Trait2: ${element.trait2}</li>
-        <li class="list-group-item">Trait3: ${element.trait3}</li>
-        <li class="list-group-item">Trait4: ${element.trait4}</li>
+        <li class="list-group-item AD">Daño Físico: ${element.info.attack}</li>
+        <li class="list-group-item AP">Daño Mágico: ${element.info.magic}</li>
+        <li class="list-group-item DEF">Resistencias: ${element.info.defense}</li>
         </ul>
         </div>
         </div>
@@ -275,69 +267,67 @@ function mostrarAdc(array){
     });
 }
 
-adcDropdown.addEventListener('click', ()=>
-Toastify({
-    text: `Campeón seleccionado para adc. Click para cancelar`,
-    duration: 10000,
-    close: true,
-    gravity: "bottom",
-    position: "right",
-    stopOnFocus: false,
-    style: {
-        color: "#000000",
-        background: "#ffc107",
-    },
-    onClick: function(){
-        adcCard.innerHTML=""
-        adcChampion(adcChampion=[])
-    }
-  }).showToast(),)
+adcDropdown.addEventListener('click', () =>
+    Toastify({
+        text: `Campeón seleccionado para adc. Click para cancelar`,
+        duration: 10000,
+        close: true,
+        gravity: "bottom",
+        position: "right",
+        stopOnFocus: false,
+        style: {
+            color: "#000000",
+            background: "#ffc107",
+        },
+        onClick: function () {
+            adcCard.innerHTML = ""
+            adcChampion(adcChampion = [])
+        }
+    }).showToast(), )
 
-adcDropdown.addEventListener('click', ()=>
-mostrarAdc(adcChampion))
-adcDropdown.addEventListener('click', ()=>
-adcChampion(adcChampion=[]))
+adcDropdown.addEventListener('click', () =>
+    mostrarAdc(adcChampion))
+adcDropdown.addEventListener('click', () =>
+    (adcChampion = []))
 
-                                                                                                    //SUPP
+/////SUPP/////
 
-const suppDropdown=document.getElementById("suppDropdown")
-function mostrarSuppDropdown(array){
-    suppDropdown.innerHTML=""
+const suppDropdown = document.getElementById("suppDropdown")
+
+function mostrarSuppDropdown(array) {
+    suppDropdown.innerHTML = ""
     array.forEach(element => {
-        suppDropdown.innerHTML+=`
+        suppDropdown.innerHTML += `
         <ul>
-        <li>${element.name}</li>
-        <button onclick="agregarASupp(${element.id})"> Seleccionar</button>
+        <li class="champName">${element.name}</li>
+        <button onclick='agregarASupp("${element.id}")'> Seleccionar</button>
         </ul>`
     })
 }
 
-mostrarSuppDropdown(campeones)
+let suppChampion = []
 
-let suppChampion=[]
-
-function agregarASupp(idParam){
-    const championSelected= campeones.find(e=>e.id==idParam)
+function agregarASupp(idParam) {
+    const championSelected = campeones.find(e => e.id === idParam)
     suppChampion.push(championSelected)
 }
 
 console.log(suppChampion)
 
-const suppCard=document.getElementById("suppCard")
+const suppCard = document.getElementById("suppCard")
 
-function mostrarSupp(array){
-    suppCard.innerHTML=""
+function mostrarSupp(array) {
+    suppCard.innerHTML = ""
     array.forEach(element => {
-        suppCard.innerHTML+=`        
-        <div class="card-header text-center">Campeón de Supp</div>
+        suppCard.innerHTML += `        
+        <h5 class="card-header text-center">${element.name}</h5>
+        <img src="IMG/${element.image.full}" class="card-img-supp" alt="Campeón de Supp"> 
         <div class="card-body text-center">
-        <h5 class="card-title">${element.name}</h5>
+        <h5 class="card-title">${element.title}</h5>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">Rol: ${element.title}</li>
-        <li class="list-group-item">Trait1: ${element.trait1}</li>
-        <li class="list-group-item">Trait2: ${element.trait2}</li>
-        <li class="list-group-item">Trait3: ${element.trait3}</li>
-        <li class="list-group-item">Trait4: ${element.trait4}</li>
+        <li class="list-group-item AD">Daño Físico: ${element.info.attack}</li>
+        <li class="list-group-item AP">Daño Mágico: ${element.info.magic}</li>
+        <li class="list-group-item DEF">Resistencias: ${element.info.defense}</li>
         </ul>
         </div>
         </div>
@@ -345,28 +335,25 @@ function mostrarSupp(array){
     });
 }
 
-suppDropdown.addEventListener('click', ()=>
-Toastify({
-    text: `Campeón seleccionado para supp. Click para cancelar`,
-    duration: 10000,
-    close: true,
-    gravity: "bottom",
-    position: "right",
-    stopOnFocus: false,
-    style: {
-        color: "#000000",
+suppDropdown.addEventListener('click', () =>
+    Toastify({
+        text: `Campeón seleccionado para supp. Click para cancelar`,
+        duration: 10000,
+        close: true,
+        gravity: "bottom",
+        position: "right",
+        stopOnFocus: false,
+        style: {
+            color: "#000000",
+            background: "#0dcaf0",
+        },
+        onClick: function () {
+            suppCard.innerHTML = ""
+            suppChampion(suppChampion = [])
+        }
+    }).showToast(), )
 
-        background: "#0dcaf0",
-    },
-    onClick: function(){
-        suppCard.innerHTML=""
-        suppChampion(suppChampion=[])
-    }
-  }).showToast(),)
-
-suppDropdown.addEventListener('click', ()=>
-mostrarSupp(suppChampion))
-suppDropdown.addEventListener('click', ()=>
-suppChampion(suppChampion=[]))
-
-
+suppDropdown.addEventListener('click', () =>
+    mostrarSupp(suppChampion))
+suppDropdown.addEventListener('click', () =>
+    (suppChampion = []))
