@@ -56,9 +56,9 @@ function mostrarTop(array) {
         <div class="card-body text-center">
         <h5 class="card-title">${element.title}</h5>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item AD">Daño Físico: ${element.info.attack}</li>
+        <li id="topAD" class="list-group-item AD">Daño Físico: ${element.info.attack}</li>
         <li class="list-group-item AP">Daño Mágico: ${element.info.magic}</li>
-        <li class="list-group-item DEF">Resistencias: ${element.info.defense}</li>
+        <li class="list-group-item DEF">Resistencia: ${element.info.defense}</li>
         </ul>
         </div>
         </div>
@@ -69,7 +69,7 @@ function mostrarTop(array) {
 topDropdown.addEventListener('click', () =>
     Toastify({
         text: `Campeón seleccionado para top. Click para cancelar`,
-        duration: 10000,
+        duration: 30000,
         close: true,
         gravity: "bottom",
         position: "right",
@@ -125,7 +125,7 @@ function mostrarMid(array) {
         <ul class="list-group list-group-flush">
         <li class="list-group-item AD">Daño Físico: ${element.info.attack}</li>
         <li class="list-group-item AP">Daño Mágico: ${element.info.magic}</li>
-        <li class="list-group-item DEF">Resistencias: ${element.info.defense}</li>
+        <li class="list-group-item DEF">Resistencia: ${element.info.defense}</li>
         </ul>
         </div>
         </div>
@@ -136,7 +136,7 @@ function mostrarMid(array) {
 midDropdown.addEventListener('click', () =>
     Toastify({
         text: `Campeón seleccionado para mid. Click para cancelar`,
-        duration: 10000,
+        duration: 30000,
         close: true,
         gravity: "bottom",
         position: "right",
@@ -192,7 +192,7 @@ function mostrarJg(array) {
         <ul class="list-group list-group-flush">
         <li class="list-group-item AD">Daño Físico: ${element.info.attack}</li>
         <li class="list-group-item AP">Daño Mágico: ${element.info.magic}</li>
-        <li class="list-group-item DEF">Resistencias: ${element.info.defense}</li>
+        <li class="list-group-item DEF">Resistencia: ${element.info.defense}</li>
         </ul>
         </div>
         </div>
@@ -203,7 +203,7 @@ function mostrarJg(array) {
 jgDropdown.addEventListener('click', () =>
     Toastify({
         text: `Campeón seleccionado para jg. Click para cancelar`,
-        duration: 10000,
+        duration: 30000,
         close: true,
         gravity: "bottom",
         position: "right",
@@ -259,7 +259,7 @@ function mostrarAdc(array) {
         <ul class="list-group list-group-flush">
         <li class="list-group-item AD">Daño Físico: ${element.info.attack}</li>
         <li class="list-group-item AP">Daño Mágico: ${element.info.magic}</li>
-        <li class="list-group-item DEF">Resistencias: ${element.info.defense}</li>
+        <li class="list-group-item DEF">Resistencia: ${element.info.defense}</li>
         </ul>
         </div>
         </div>
@@ -270,7 +270,7 @@ function mostrarAdc(array) {
 adcDropdown.addEventListener('click', () =>
     Toastify({
         text: `Campeón seleccionado para adc. Click para cancelar`,
-        duration: 10000,
+        duration: 30000,
         close: true,
         gravity: "bottom",
         position: "right",
@@ -327,7 +327,7 @@ function mostrarSupp(array) {
         <ul class="list-group list-group-flush">
         <li class="list-group-item AD">Daño Físico: ${element.info.attack}</li>
         <li class="list-group-item AP">Daño Mágico: ${element.info.magic}</li>
-        <li class="list-group-item DEF">Resistencias: ${element.info.defense}</li>
+        <li class="list-group-item DEF">Resistencia: ${element.info.defense}</li>
         </ul>
         </div>
         </div>
@@ -338,7 +338,7 @@ function mostrarSupp(array) {
 suppDropdown.addEventListener('click', () =>
     Toastify({
         text: `Campeón seleccionado para supp. Click para cancelar`,
-        duration: 10000,
+        duration: 30000,
         close: true,
         gravity: "bottom",
         position: "right",
@@ -357,3 +357,33 @@ suppDropdown.addEventListener('click', () =>
     mostrarSupp(suppChampion))
 suppDropdown.addEventListener('click', () =>
     (suppChampion = []))
+
+    /////Clear Buttons
+
+    clearBtn.addEventListener('click', () =>
+        topCard.innerHTML = "")
+    clearBtn.addEventListener('click', () =>
+        midCard.innerHTML = "")
+    clearBtn.addEventListener('click', () =>
+        jgCard.innerHTML = "")
+    clearBtn.addEventListener('click', () =>
+        adcCard.innerHTML = "")
+    clearBtn.addEventListener('click', () =>
+        suppCard.innerHTML = "")
+    clearTop.addEventListener('click', () =>
+        topCard.innerHTML = "")
+    clearMid.addEventListener('click', () =>
+        midCard.innerHTML = "")
+    clearJg.addEventListener('click', () =>
+        jgCard.innerHTML = "")
+    clearAdc.addEventListener('click', () =>
+        adcCard.innerHTML = "")
+    clearSupp.addEventListener('click', () =>
+        suppCard.innerHTML = "")
+
+
+
+
+
+
+

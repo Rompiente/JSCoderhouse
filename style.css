@@ -3,6 +3,15 @@ body {
     color: black;
 }
 
+h1 {
+    font-family: Rockwell, sans-serif, serif;
+}
+
+h3 {
+    font-family: Garamond, Times, serif;
+    text-shadow: 1px 1px;
+}
+
 ul {
     list-style-type: none;
 }
@@ -28,13 +37,16 @@ ul {
 }
 
 .AD {
+    background-color: rgb(124, 33, 33);
     text-shadow: 1px 1px red;
 }
 
 .AP {
+    background-color: rgb(60, 60, 196);
     text-shadow: 1px 1px blue;
 }
 
 .DEF {
+    background-color: rgb(20, 121, 20);
     text-shadow: 1px 1px green;
 }
